@@ -5,6 +5,7 @@
             index <= stars() ? 'fa-solid' : 'fa-regular',
             'fa-star'
         ]" />
+       
   </div>
 </template>
 
@@ -25,12 +26,12 @@ export default {
 
         stars(){
             let vote = this.vote;
-            if(vote<2){
+            if(vote===0){
                 vote=2;
                 return Math.ceil(vote / 10 * this.max);
             }
             
-           else return Math.ceil(this.vote / 10 * this.max);
+           else return Math.ceil(vote / 10 * this.max);
             
         }
 
@@ -39,6 +40,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+    div > *{
+        color: yellow;
+    }
 
 </style>
