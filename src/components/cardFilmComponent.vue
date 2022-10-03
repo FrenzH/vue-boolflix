@@ -1,6 +1,7 @@
 <template>
     <div class="MoviesCards">
         <p>{{movies.title}}</p>
+        <font-awesome-icon :icon="['fa-solid','fa-star']" />
         <p>{{movies.original_title}}</p>
         <p><flagsComponent :language='movies.original_language'/></p>
         <p>{{movies.vote_average}}</p>
