@@ -44,6 +44,8 @@ export default {
     .moviesContainer{
         display: flex;
         flex-wrap: wrap;
+        height: 1000px;
+        background-color: aqua;
     }
 
 </style>
