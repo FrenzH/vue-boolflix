@@ -1,39 +1,46 @@
 <template>
 
     <div>
-        <input type="text" v-model="searchText"><button @click="search"></button>
+        
+        <div class="moviesContainer">
+            <cardFilmComponent v-for="movie in movies" :key="movie.key" :movies='movie'/>
+
+        </div>
+        
+
     </div>
+    
+    
+    
   
 </template>
 
 <script>
-import {apiKey} from '@/env';
 
-import axios from 'axios';
+import cardFilmComponent from '@/components/cardFilmComponent.vue';
+
 export default {
     name: 'mainComponent',
-    data(){
-        return{
-            searchText:''
-        }
+    props:{
+        movies: Array
     },
-    methods:{
-    getAPI(searchText){
-      
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchText}`)
-        .then((response)=>{
-        console.log(response);
-      })
-    },
-    search(){
-      this.getAPI(this.searchText);
-    }
+   
+    
 
 
-  }
+  
+  components:{
+    cardFilmComponent,
+   
+ }
 }
+
 </script>
 
 <style lang="scss" scoped>
+    .moviesContainer{
+        display: flex;
+        flex-wrap: wrap;
+    }
 
 </style>
