@@ -2,7 +2,7 @@
   <div id="app">
 
     <headerComponent @search="searchText" />
-    <mainComponent :movies="movies" />
+    <mainComponent :movies="movies" :tvSeries="tvSeries" />
 
     
   </div>
@@ -25,6 +25,7 @@ export default {
         return{
             
             movies:[],
+            tvSeries:[]
         }
   },
   
@@ -37,6 +38,13 @@ export default {
         this.movies=response.data.results;
         console.log(this.movies)
       })
+      axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${searchText}`)
+      .then((response)=>{
+        console.log(response);
+        this.tvSeries=response.data.results;
+        console.log(this.tvSeries)
+      })
+
       
     },
     

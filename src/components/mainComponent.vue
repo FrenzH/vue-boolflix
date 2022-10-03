@@ -4,7 +4,7 @@
         
         <div class="moviesContainer">
             <cardFilmComponent v-for="movie in movies" :key="movie.key" :movies='movie'/>
-
+            <cardTvSeriesComponent v-for="tvSerie in tvSeries" :key="tvSerie.key" :tvSeries="tvSerie" />
         </div>
         
 
@@ -18,11 +18,14 @@
 <script>
 
 import cardFilmComponent from '@/components/cardFilmComponent.vue';
+import cardTvSeriesComponent from '@/components/cardTvSeriesComponent.vue';
+
 
 export default {
     name: 'mainComponent',
     props:{
-        movies: Array
+        movies: Array,
+        tvSeries:Array
     },
    
     
@@ -31,8 +34,8 @@ export default {
   
   components:{
     cardFilmComponent,
-   
- }
+    cardTvSeriesComponent
+}
 }
 
 </script>

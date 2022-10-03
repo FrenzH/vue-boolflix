@@ -2,21 +2,24 @@
     <div class="MoviesCards">
         <p>{{movies.title}}</p>
         <p>{{movies.original_title}}</p>
-        <p><flagsComponent :movies='movies'/></p>
+        <p><flagsComponent :language='movies.original_language'/></p>
         <p>{{movies.vote_average}}</p>
+        <coverComponent :URLimage='movies.poster_path' />
     </div>
   
 </template>
 
 <script>
 import flagsComponent from '@/components/flagsComponent.vue';    
+import coverComponent from '@/components/coverComponent.vue';
 export default {
     name:'cardFilmComponent',
     props:{
         movies: Array
     },
     components:{
-        flagsComponent
+        flagsComponent,
+        coverComponent
     }
 
 

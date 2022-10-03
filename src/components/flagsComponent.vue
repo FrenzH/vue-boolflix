@@ -1,8 +1,8 @@
 <template>
   <div>
     <img
-       :src="getFlagsUrl(movies.original_language)"
-       :alt="movies.original_language"
+       :src="getFlagsUrl(language)"
+       :alt="language"
        
       >
   </div>
@@ -12,7 +12,7 @@
 export default {
     name: 'flagsComponent',
     props:{
-        movies:Array
+        language:String
     },
     methods:{
         getFlagsUrl(language){
