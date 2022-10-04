@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="getImageUrl" :alt="cover">
+    <img :src="getImageUrl" :alt="alt">
   </div>
 
 </template>

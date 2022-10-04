@@ -66,11 +66,12 @@ export default {
 </script>
 
 <style lang="scss">
+   @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
   *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-   
+    font-family: 'Comfortaa', cursive;
   }
 
 </style>

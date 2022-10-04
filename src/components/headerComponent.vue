@@ -6,7 +6,11 @@
       </div>
     
       <div>
+        
         <input type="text" v-model="searchText" @keyup.enter="$emit('search',searchText)" placeholder=" search">
+
+        
+       
         <button @click="$emit('search',searchText)">
           <font-awesome-icon :icon="['fa-solid','fa-magnifying-glass']" />
         </button>
@@ -30,16 +34,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+ 
 
   header{
-    font-family: 'Comfortaa', cursive;
+    
     
     background-color: black;
     padding: 10px;
     position: fixed;
+    z-index: 100;
     width: 100%;
     height: 90px;
+    opacity: 80%;
    
   
     .header-container{
@@ -87,7 +93,8 @@ export default {
       align-self: center;
       border-radius: 8px;
        border-bottom-style: none;
-       margin-right: 20px;
+       margin-right: 30px;
+       padding: 10px;
       
 
     }

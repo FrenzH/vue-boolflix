@@ -2,9 +2,19 @@
 
     <div>
         
-        <div class="moviesContainer">
-            <cardFilmComponent v-for="movie in movies" :key="movie.key" :movies='movie'/>
-            <cardTvSeriesComponent v-for="tvSerie in tvSeries" :key="tvSerie.key" :tvSeries="tvSerie" />
+        <div class="Container">
+            <h1>MOVIES</h1>
+            <div>
+                <cardFilmComponent v-for="movie in movies" :key="movie.key" :movies='movie'/>
+
+            </div>
+            <h1>TVSERIES</h1>
+            <div>
+                <cardTvSeriesComponent v-for="tvSerie in tvSeries" :key="tvSerie.key" :tvSeries="tvSerie" />
+
+            </div>
+            
+           
         </div>
         
 
@@ -41,11 +51,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .moviesContainer{
-        display: flex;
-        flex-wrap: wrap;
-        height: 1000px;
-        background-color: aqua;
+    .Container{
+        
+        
+        background-color:#292828;
+        padding-top: 120px;
+        color: white;
+        div{
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+        
     }
 
 </style>

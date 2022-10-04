@@ -1,11 +1,23 @@
 <template>
     <div class="MoviesCards">
-        <p>{{movies.title}}</p>
+        <div class="description">
+
+          <p>Title:{{movies.title}}</p>
         
-        <p>{{movies.original_title}}</p>
-        <p><flagsComponent :language='movies.original_language'/></p>
-        <p><starsComponent :vote='movies.vote_average'/></p>
-        <coverComponent :URLimage='movies.poster_path' />
+          <p>Original title:{{movies.original_title}}</p>
+          <p>Language:<flagsComponent :language='movies.original_language'/></p>
+          <p>Vote:<starsComponent :vote='movies.vote_average'/></p>
+          
+          <p class="overview">Description:{{movies.overview}}</p>
+
+          
+          
+        </div>
+        <div class="cover">
+            <coverComponent :URLimage='movies.poster_path' />
+
+        </div>
+        
     </div>
   
 </template>
@@ -19,6 +31,13 @@ export default {
     props:{
         movies: Array
     },
+    data(){
+        return{
+            
+        }
+    },
+ 
+    
     components:{
         flagsComponent,
         coverComponent,
@@ -31,7 +50,61 @@ export default {
 
 <style lang="scss" scoped>
     .MoviesCards{
-        padding: 10px;
+        
+        margin: 100px;
+        width: calc(100%/4);
+        position: relative;
+        height: 400px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        
+        .overview{
+            max-height: 80px;
+            
+            overflow-y: scroll;
+            overflow-x: hidden;
+            -ms-overflow-style: none;  
+             scrollbar-width: none;
+             
+            
+        }
+        .descriptions::-webkit-scrollbar {
+            display: none;
+         }
+         .cover {
+            z-index: 3;
+            position: absolute;
+            
+            height: 100%;
+            width: 73%;
+
+
+         }
+
+         
+        
+         
     }
+    
+    .description{
+        
+        position: absolute;
+            height: 100%;
+            width: 73%;   
+            z-index: 2;
+            background-color: #292828;
+             opacity: 90%;
+             
+            
+        
+           
+
+    }
+    .MoviesCards:hover{
+        .cover{
+            z-index:1;
+         }
+    }
+    
 
 </style>
