@@ -59,6 +59,7 @@ export default {
     
     h1{
       color: red;
+      padding-left: 20px;
       
       
       
