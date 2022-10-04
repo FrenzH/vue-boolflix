@@ -49,18 +49,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+     
     .MoviesCards{
         
         margin: 10px;
         width: calc(100%/5);
         position: relative;
-        height: 350px;
+        height: 470px;
         font-size: 0.8rem;
         cursor: pointer;
         
         .overview{
-            max-height: 90px;
-            max-width: 50%;
+            max-height: 170px;
+            max-width: 75%;
             overflow-y: scroll;
             overflow-x: hidden;
             -ms-overflow-style: none;  
@@ -89,7 +90,7 @@ export default {
     
     
     .description{
-        
+        padding-top: 15px;
         position: absolute;
             height: 100%;
             width: 100%;   
@@ -109,8 +110,10 @@ export default {
     }
     .description p{
         padding: 5px;
-        max-width: 170px;
+        max-width: 200px;
     }
+
+   
     
 
 </style>

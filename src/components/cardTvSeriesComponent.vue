@@ -5,7 +5,7 @@
         <p>Original title:{{tvSeries.original_name}}</p>
         <p>Language:<flagsComponent :language='tvSeries.original_language'/></p>
         <p>Vote:<starsComponent :vote='tvSeries.vote_average'/></p>
-        <p class="overview">Description:{{tvSeries.overview}}</p>
+        <p class="overview">Description: {{tvSeries.overview}}</p>
         
 
     </div>
@@ -39,15 +39,15 @@ export default {
   .TvSeriesCards{
         
         margin: 10px;
-        width: calc(100%/5);
+        min-width: calc(100%/5);
         position: relative;
-        height: 350px;
+        height: 470px;
         font-size: 0.8rem;
         cursor: pointer;
         
         .overview{
-            max-height: 90px;
-            max-width: 50%;
+            max-height: 170px;
+            max-width: 75%;
             overflow-y: scroll;
             overflow-x: hidden;
             -ms-overflow-style: none;  
@@ -76,8 +76,8 @@ export default {
     
     
     .description{
-        
-        position: absolute;
+            padding-top: 15px;
+            position: absolute;
             height: 100%;
             width: 100%;   
             z-index: 2;
@@ -98,5 +98,6 @@ export default {
         padding: 5px;
         max-width: 170px;
     }
+    
 
 </style>

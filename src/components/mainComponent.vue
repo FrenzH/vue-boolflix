@@ -61,8 +61,7 @@ export default {
             display: flex;
             flex-wrap: wrap;
             margin: auto;
-            gap: 30px;
-            justify-content: center;
+            row-gap: 20px;
         }
         h1{
             padding: 30px;

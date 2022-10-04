@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <img :src="getImageUrl" :alt="alt">
+  <div class="img-container">
+    <img :src="getImageUrl"  @error="setUnavailablePoster($event)">
   </div>
 
 </template>
@@ -14,8 +14,13 @@ export default {
     },
     computed:{
         getImageUrl(){
-            return 'https://image.tmdb.org/t/p/w185' + this.URLimage;
+            return 'https://image.tmdb.org/t/p/w300' + this.URLimage;
 
+        }
+    },
+    methods: {
+        setUnavailablePoster(event){
+            event.target.src = 'https://via.placeholder.com/300x450'
         }
     }
 
@@ -23,5 +28,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .img-container{
+    width: 100%;
+    
+  }
+  img{
+    width: 100%;
+  }
 
 </style>

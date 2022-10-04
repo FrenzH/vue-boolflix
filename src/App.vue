@@ -38,12 +38,18 @@ export default {
         this.movies=response.data.results;
         console.log(this.movies)
       })
+      .catch(error=> {
+          console.log(error.message)
+        });
       axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${searchText}`)
       .then((response)=>{
         console.log(response);
         this.tvSeries=response.data.results;
         console.log(this.tvSeries)
       })
+      .catch(error=> {
+          console.log(error.message)
+        });
 
       
     },
