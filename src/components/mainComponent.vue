@@ -35,8 +35,10 @@ export default {
     name: 'mainComponent',
     props:{
         movies: Array,
-        tvSeries:Array
+        tvSeries:Array,
+        
     },
+    
    
     
 
